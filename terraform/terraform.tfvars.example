@@ -1,0 +1,16 @@
+subnet_name = "<name of a subnet present in Prism Central>"
+
+rke_cluster_name = "<name for the RKE cluster>"
+amount_of_rke_worker_vms=2
+
+#prism central credentials
+ntnx_pc_ip="<Prism Central IP>"
+ntnx_pc_username="<Prism Central username>"
+ntnx_pc_password="<Prism Central password>"
+
+#csi
+ntnx_pe_storage_container = "<name of the storage container used for persistent volumes>"
+ntnx_pe_username="<Prism Element username>"
+ntnx_pe_password="<Prism Element password>"
+ntnx_pe_ip="<Prism Element IP>"
+ntnx_pe_dataservice_ip="<Prism Element Data Services IP>"
