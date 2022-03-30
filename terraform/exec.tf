@@ -13,7 +13,7 @@ resource "null_resource" "copy_cluster_yml" {
     host        = nutanix_virtual_machine.admin_vm.nic_list_status[0].ip_endpoint_list[0].ip
   }
   provisioner "file" {
-    destination = "~/cluster.yml"
+    destination = "/home/nutanix/cluster.yml"
     content = templatefile("${path.module}/templates/cluster.yml.tpl", {
       ssh_username = var.admin_vm_username,
       "rke_worker_nodes" : local.worker_vm_ips,
@@ -45,7 +45,7 @@ resource "null_resource" "configure_admin_vm" {
 
   provisioner "file" {
     content     = file(local_file.rke_private_ssh_key.filename)
-    destination = "~/.ssh/id_rsa"
+    destination = "/home/nutanix/.ssh/id_rsa"
   }
   provisioner "remote-exec" {
     inline = [
